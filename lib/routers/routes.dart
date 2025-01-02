@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pavan_car_rental_1062/features/home/view/home_view_screen.dart';
 import 'package:pavan_car_rental_1062/features/login/login_view/login_view.dart';
 import 'package:pavan_car_rental_1062/features/signup/signup_view/signup_view.dart';
 import 'package:pavan_car_rental_1062/features/splash/view/splash_view.dart';
@@ -31,6 +32,12 @@ class AppRouter {
             return const SignupView();
           },
         ),
+        GoRoute(
+          path: RoutesConst.homeScreen,
+          builder: (BuildContext context, GoRouterState state) {
+            return const HomeScreen();
+          },
+      ),
       ],
       errorBuilder: (BuildContext context, GoRouterState state) {
         return const Scaffold(

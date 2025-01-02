@@ -3,6 +3,8 @@ import 'package:pavan_car_rental_1062/features/login/login_repo/login_repo_impl.
 import 'package:pavan_car_rental_1062/features/login/login_view_model/login_view_model.dart';
 import 'package:pavan_car_rental_1062/features/signup/signup_repo/repository_impl.dart';
 import 'package:pavan_car_rental_1062/features/signup/signup_view_model/signup_viewmodel.dart';
+import 'package:pavan_car_rental_1062/features/cars/cars_repo/car_repository_impl.dart'; 
+import 'package:pavan_car_rental_1062/features/cars/cars_view_model/cars_view_model.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:pavan_car_rental_1062/routers/routes.dart';
@@ -32,6 +34,9 @@ class MyApp extends StatelessWidget {
             create: (_) => SignUpViewModel(repository: RepositoryImpl())),
         ChangeNotifierProvider(
             create: (_) => LoginViewModel(repository: LoginRepoImpl())),
+        ChangeNotifierProvider(
+            create: (_) =>
+                CarsViewModel(repository: CarRepositoryImpl())), 
       ],
       child: MaterialApp.router(
         title: 'Pavan Car Rental',
