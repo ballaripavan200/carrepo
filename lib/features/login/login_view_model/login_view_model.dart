@@ -14,7 +14,7 @@ class LoginViewModel extends ChangeNotifier {
     try {
       final response = await repository.login(model.toJson());
       LoginResModel modelData =
-          LoginResModel.fromJson(response.data ??{});
+          LoginResModel.fromJson(response.data);
       await saveTheUserData(modelData);
       return modelData;
     } catch (e) {

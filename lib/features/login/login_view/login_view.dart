@@ -32,6 +32,7 @@ class _LoginViewState extends State<LoginView> {
         width: double.infinity,
         child: SingleChildScrollView(
           child: Padding(
+            
             padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -131,7 +132,7 @@ class _LoginViewState extends State<LoginView> {
     LoaderWidget.showLoader();
     final LoginResModel response = await viewModel.loginApi(requestModel);
     LoaderWidget.hideLoader();
-    if (response.error != false) {
+    if (response.error == false) {
       NavigationServices().replaceAll(RoutesConst.homeScreen);
     } else {
       ScaffoldMessenger.of(context)

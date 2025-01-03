@@ -6,6 +6,6 @@ class LoginRepoImpl extends LoginRepo{
   final _apiServices = ApiServices();
    @override
   Future<dynamic> login(payload) {
-    return _apiServices.postCall(ServerConstants.signup, payload);
+    return _apiServices.postCall(ServerConstants.signin, payload);
   }
 }
